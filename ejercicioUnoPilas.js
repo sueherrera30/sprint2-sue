@@ -1,25 +1,31 @@
-function Stack() {
 var nombres=[];
 
-this.push = function (nombre){
-   nombres.push(nombre);
+function Stack() {
+  var almacen = [];
+
+this.push = function (element){
+   almacen.push(element);
 
 }
 this.pop = function (){
- return  nombres.pop();
+ return  almacen.pop();
 
 }
 this.print = function (){
-  console.log(nombres);
+  console.log(almacen.toString());
 }
+ this.size = function () {
+   return almacen.length;
+ }
 }
+
 var nombre = new Stack();
 
-nombre.push("sue");
-nombre.push("mimi");
-nombre.push("edith");
-nombre.push("vale");
-nombre.push("pari");
+nombre.push("sue ");
+nombre.push("mimi ");
+nombre.push("edith ");
+nombre.push("vale ");
+nombre.push("pari ");
 
 nombre.print();
 
@@ -33,8 +39,9 @@ apellidos.push("jacobo");
 
 apellidos.print()
 
-var nombresTotales= [];
-  for( var i = 0; i < 5; i++){
-  nombresTotales.push(nombre.pop() + " "+ apellidos.pop());
+
+var tamano = nombre.size();
+  for( var i = 0; i < tamano; i++){
+  nombres.push(nombre.pop() + " "+ apellidos.pop());
   }
- console.log(nombresTotales);
+ document.write(nombres);
